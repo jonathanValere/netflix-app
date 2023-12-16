@@ -1,22 +1,27 @@
 import "./App.css";
 import movieDatas from "../src/assets/movies_netflix.json";
+// import Section from "./components/Section";
 
 function App() {
-  // console.log(movieDatas);
-  const listCategories = movieDatas.map((cat, index) => {
-    // Affiche les catégories
-    return <h2 key={index}>{cat.category}</h2>;
-    // console.log(index, cat);
-    // cat.images.map((movie, index) => {
-    //   console.log(index, movie);
-    // });
-  });
-
   return (
     <>
       <header>Netflix</header>
       <main>
-        <section>{listCategories}</section>
+        {movieDatas.map((cat, index) => {
+          return (
+            <section key={index}>
+              {/* Afficher les catégories */}
+              <h2>{cat.category}</h2>
+              {/* Afficher les images */}
+              <div>
+                {cat.images.map((movie, index) => {
+                  // console.log(index, movie);
+                  return <img key={index} src={movie} alt="image movie" />;
+                })}
+              </div>
+            </section>
+          );
+        })}
       </main>
     </>
   );
