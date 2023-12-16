@@ -1,0 +1,3 @@
+# Réplique simplifiée de Netflix
+
+L'objectif était de comprendre les composants, la méthode map, afficher une liste...
